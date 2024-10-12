@@ -1,18 +1,15 @@
-import { fetchSpotifyTracks } from "./services/spotify.js"
-import { fetchAppleMusicTracks } from "./services/apple.js"
-import type { SpotifyTrack } from "./types/spotify.js"
-import type { Platform, FetchTracksInput } from "./types/index.js"
-import type { AppleTrack } from "./types/apple.js"
+import { fetchSpotifyTracks } from "./services/spotify.js";
+import { fetchAppleMusicTracks } from "./services/apple.js";
+import type { FetchTracksInput, PlatformTrackMap } from "./types/index.js";
 
-export async function fetchTracks(
+export async function fetchTracks<T extends keyof PlatformTrackMap>(
   input: FetchTracksInput,
-  platform: Platform
-): Promise<SpotifyTrack[] | AppleTrack[]> {
+  platform: T,
+): Promise<PlatformTrackMap[T][]> {
   if (platform === "spotify") {
-    return fetchSpotifyTracks(input)
+    return fetchSpotifyTracks(input) as Promise<PlatformTrackMap[T][]>;
   } else if (platform === "apple") {
-    // @ts-expect-error error handeling not correct
-    return fetchAppleMusicTracks(input)
+    return fetchAppleMusicTracks(input) as Promise<PlatformTrackMap[T][]>;
   }
-  throw new Error("Unsupported platform")
+  throw new Error("Unsupported platform");
 }
