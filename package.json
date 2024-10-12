@@ -1,0 +1,21 @@
+{
+  "name": "track-tracks",
+  "version": "1.0.0",
+  "description": "A package to track tracks across music streaming platfroms",
+  "keywords": [
+    "ISRC"
+  ],
+  "homepage": "https://github.com/joostwmd/track-tracks.git",
+  "bugs": {
+    "url": "https://github.com/joostwmd/track-tracks.git/issues"
+  },
+  "author": "Joost Windmöller",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joostwmd/track-tracks.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module"
+}
