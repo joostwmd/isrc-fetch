@@ -2,6 +2,12 @@
   "name": "track-tracks",
   "version": "1.0.0",
   "description": "A package to track tracks across music streaming platfroms",
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run build && npm run check-format",
+    "format": "prettier --write .",
+    "check-format": "prettier --check ."
+  },
   "keywords": [
     "ISRC"
   ],
@@ -18,5 +24,9 @@
     "dist"
   ],
   "type": "module",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  }
 }
