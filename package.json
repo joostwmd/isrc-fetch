@@ -1,7 +1,7 @@
 {
   "name": "track-tracks",
   "version": "1.0.0",
-  "description": "A package to track tracks across music streaming platfroms",
+  "description": "A package to track tracks across music streaming services",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsup",
