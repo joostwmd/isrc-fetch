@@ -11,7 +11,3 @@ export async function fetchTracks(
   }
   throw new Error("Unsupported platform")
 }
-
-export async function test() {
-  console.log("test")
-}
