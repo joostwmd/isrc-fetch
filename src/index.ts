@@ -1,1 +1,1 @@
-export { fetchTracks, test } from "./utils.js"
+export { fetchTracks } from "./utils.js"
