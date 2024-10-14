@@ -1,5 +1,5 @@
 {
-  "name": "track-tracks",
+  "name": "isrc-fetch",
   "version": "1.0.0",
   "description": "A package to track tracks across music streaming services",
   "main": "dist/index.js",
@@ -15,14 +15,14 @@
   "keywords": [
     "ISRC"
   ],
-  "homepage": "https://github.com/joostwmd/track-tracks.git",
+  "homepage": "https://github.com/joostwmd/isrc-fetch.git",
   "bugs": {
-    "url": "https://github.com/joostwmd/track-tracks.git/issues"
+    "url": "https://github.com/joostwmd/isrc-fetch.git/issues"
   },
   "author": "Joost Windmöller",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joostwmd/track-tracks.git"
+    "url": "git+https://github.com/joostwmd/isrc-fetch.git"
   },
   "files": [
     "dist"
