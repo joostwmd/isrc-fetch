@@ -6,6 +6,16 @@ export const VALID_ISCR_INPUT = {
       trackName: "Dünya",
       isrc: "DEZC62417969",
     },
+    {
+      artistName: "Ceren",
+      trackName: "Dünya",
+      isrc: "DEZC62417969",
+    },
+    {
+      artistName: "Ceren",
+      trackName: "Dünya",
+      isrc: "DEZC62417969",
+    },
   ],
 }
 
