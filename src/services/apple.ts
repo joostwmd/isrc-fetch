@@ -21,9 +21,5 @@ export async function fetchAppleMusicTracks(
 
   const data: AppleSearchTracksResponse = await response.json()
 
-  if (!data.data || data.data.length === 0) {
-    throw new Error("No Tracks Found")
-  }
-
   return data.data
 }
