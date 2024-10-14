@@ -10,7 +10,9 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "check-exports": "attw --pack .",
-    "test": "vitest run"
+    "test": "vitest run",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
   },
   "keywords": [
     "ISRC"
@@ -31,6 +33,7 @@
   "license": "MIT",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.16.4",
+    "@changesets/cli": "^2.27.9",
     "@types/node": "^22.7.5",
     "dotenv": "^16.4.5",
     "prettier": "^3.3.3",
