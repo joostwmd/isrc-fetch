@@ -17,7 +17,7 @@ export const VALID_ISCR_INPUT = {
       isrc: "DEZC62417969",
     },
   ],
-}
+};
 
 export const INVALID_ISCR_INPUT = {
   market: "US",
@@ -33,4 +33,4 @@ export const INVALID_ISCR_INPUT = {
       isrc: "INVALIDISRC456",
     },
   ],
-}
+};

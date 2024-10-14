@@ -1,32 +1,36 @@
-import type { FetchTracksInput, TrackInput } from "../types/index.js"
+import type { FetchTracksInput, TrackInput } from "../types/index.js";
 import type {
   SpotifySearchTrackResponse,
   SpotifyTrack,
-} from "../types/spotify.js"
+} from "../types/spotify.js";
 
 export async function fetchSpotifyTracks(
-  input: FetchTracksInput
+  input: FetchTracksInput,
 ): Promise<SpotifyTrack[]> {
-  const tracks: SpotifyTrack[] = []
+  const tracks: SpotifyTrack[] = [];
 
   for (const track of input.tracks) {
     try {
-      const response = await fetchSpotifyTrack(track, input.market, input.token)
+      const response = await fetchSpotifyTrack(
+        track,
+        input.market,
+        input.token,
+      );
       if (response) {
-        tracks.push(response)
+        tracks.push(response);
       }
     } catch (error) {
-      console.error(`Error fetching track with ISRC ${track.isrc}:`, error)
+      console.error(`Error fetching track with ISRC ${track.isrc}:`, error);
     }
   }
 
-  return tracks
+  return tracks;
 }
 
 export async function fetchSpotifyTrack(
   track: TrackInput,
   market: string,
-  token: string
+  token: string,
 ): Promise<SpotifyTrack | null> {
   const response: Response = await fetch(
     `https://api.spotify.com/v1/search?q=isrc:${track.isrc}&type=track&market=${market}&limit=1`,
@@ -34,19 +38,19 @@ export async function fetchSpotifyTrack(
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }
-  )
+    },
+  );
 
   if (!response.ok) {
-    console.error(`Error fetching track with ISRC ${track.isrc}:`, response)
-    throw new Error(`Error fetching track: ${response.statusText}`)
+    console.error(`Error fetching track with ISRC ${track.isrc}:`, response);
+    throw new Error(`Error fetching track: ${response.statusText}`);
   }
 
-  const data: SpotifySearchTrackResponse = await response.json()
+  const data: SpotifySearchTrackResponse = await response.json();
 
   if (!data.tracks.items[0] || data.tracks.total === 0) {
-    return null
+    return null;
   }
 
-  return data.tracks.items[0]
+  return data.tracks.items[0];
 }
